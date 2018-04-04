@@ -1,0 +1,33 @@
+.post-list-element {
+  margin-bottom: 10px;
+
+  .mat-card-header-text { margin: 0; }
+
+  mat-card-title {
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  mat-card-subtitle {
+    font-size: 0.9rem;
+    .pref {
+      font-size: 0.8rem;
+    }
+  }
+
+  mat-card-actions {
+    text-align: right;
+
+    img {
+      width: 25px;
+      height: auto;
+    }
+  }
+}

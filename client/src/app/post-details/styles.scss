@@ -1,0 +1,44 @@
+.post-details {
+  margin-bottom: 10px;
+
+  .mat-card-header-text { margin: 0; }
+
+  mat-card-title {
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  mat-card-subtitle {
+    font-size: 0.9rem;
+    .pref {
+      font-size: 0.8rem;
+    }
+  }
+  mat-card-footer {
+    padding: 5px;
+  }
+
+  .post-comm {
+    display: flex;
+    border-bottom: 1px #ddd solid;
+    padding: 5px;
+
+    .post-comm-author {
+      width: 150px;
+      flex: none;
+      font-size: 0.9rem;
+    }
+  }
+}
+.create-comment-place {
+ mat-form-field {
+    display: block;
+  }
+}

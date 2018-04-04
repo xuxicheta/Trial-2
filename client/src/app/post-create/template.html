@@ -1,24 +1,33 @@
 <div class="post-create">
   <h3>Create post</h3>
   <form (submit)="submitMe($event)">
-    <div class="line">
-      <label>
-        <span>Title</span>
-        <input type="text" [(ngModel)]="post.title" name="title">
-      </label>
-    </div>
-    <div class="line">
-      <label>
-        <span>Author</span>
-        <input type="text" [(ngModel)]="post.author" name="author">
-      </label>
-    </div>
-    <div class="line">
-      <label>
-        <span>Text</span>
-        <textarea [(ngModel)]="post.body" name="body"></textarea>
-      </label>
-    </div>
+
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="post.title"
+        placeholder="Title"
+        value=""
+        name="title"
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="post.author"
+        placeholder="Author"
+        value=""
+        name="author"
+      >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        [(ngModel)]="post.body"
+        placeholder="Leave a post"
+        name="body"
+      ></textarea>
+    </mat-form-field>
 
     <div class="buttons">
       <button type="submit" class="btn-g">Create</button>

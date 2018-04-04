@@ -1,17 +1,17 @@
-<div class="post-one">
-  <div class="post-title">
-    <a routerLink="/posts/{{post.id}}">{{ post.title }}</a>
-  </div>
-  <div class="post-date">
-    <span class="pref">Created: </span>{{ post.createdAt | date }}
-  </div>
-  <div class="post-author">
-    <span class="pref">Author: </span>{{ post.author }}
-  </div>
-  <div class="post-body">
+<mat-card class="post-list-element">
+  <mat-card-header>
+    <mat-card-title class="">
+      <a routerLink="/posts/{{post.id}}">{{ post.title }}</a>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <span class="pref">Author: </span>{{ post.author }}
+      <span class="pref">Created: </span>{{ post.createdAt | date }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
     {{ post.body }}
-  </div>
-  <div class="post-comments">
-      <a routerLink="/posts/{{post.id}}"><img src="../../assets/comment-white-oval-bubble.svg"></a>
-  </div>
-</div>
+  </mat-card-content>
+  <mat-card-actions>
+    <a routerLink="/posts/{{post.id}}"><img src="../../assets/comment-white-oval-bubble.svg"></a>
+  </mat-card-actions>
+</mat-card>

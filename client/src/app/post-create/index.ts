@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'post-create',
   templateUrl: './template.html',
-  styleUrls: ['./styles.css'],
+  styleUrls: ['./styles.scss'],
 })
 export class PostCreateComponent implements OnInit {
   @Output() close = new EventEmitter<boolean>();

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule }   from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule }   from '@angular/common/http';
-import { AppRoutingModule } from './/app-routing.module';
+// Material
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// routing
+import { AppRoutingModule } from './/app-routing.module';
 // components
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list';
@@ -24,16 +30,23 @@ import { ApiService } from './api.service';
     PostCreateComponent,
     PostDetailsComponent,
   ],
+  exports: [
+    MatCardModule,
+  ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     RouterModule,
-    HttpClientModule,
-    AppRoutingModule,
+    MatCardModule,
+    MatInputModule,
+    MatDividerModule,
   ],
   providers: [
     ApiService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }

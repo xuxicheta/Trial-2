@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../types/Post';
 import { Comment } from '../types/Comment';
@@ -7,9 +7,12 @@ import { ApiService } from '../api.service';
 @Component({
   selector: 'post-details',
   templateUrl: './template.html',
-  styleUrls: ['./styles.css'],
+  styleUrls: ['./styles.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PostDetailsComponent implements OnInit {
+  @Input() inset: boolean;
+
   post: Post = {
     id: '',
     title: '',
