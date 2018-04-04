@@ -1,0 +1,50 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  height: 2.5rem;
+  flex: none;
+  background: blue;
+
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 2.0rem;
+  padding: 7px;
+  color: white;
+  text-align: center;
+}
+
+.main {
+  position: relative;
+  flex: auto;
+  max-width: 1000px;
+  min-width: 800px;
+  margin: auto;
+}
+
+.shadow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 10;
+}
+
+
+.footer {
+  height: 0.7rem;
+  flex: none;
+  background: blue;
+}

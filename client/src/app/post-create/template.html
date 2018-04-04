@@ -1,0 +1,28 @@
+<div class="post-create">
+  <h3>Create post</h3>
+  <form (submit)="submitMe($event)">
+    <div class="line">
+      <label>
+        <span>Title</span>
+        <input type="text" [(ngModel)]="post.title" name="title">
+      </label>
+    </div>
+    <div class="line">
+      <label>
+        <span>Author</span>
+        <input type="text" [(ngModel)]="post.author" name="author">
+      </label>
+    </div>
+    <div class="line">
+      <label>
+        <span>Text</span>
+        <textarea [(ngModel)]="post.body" name="body"></textarea>
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="btn-g">Create</button>
+      <button (click)="closeMe($event)" class="btn-g">Cancel</button>
+    </div>
+  </form>
+</div>

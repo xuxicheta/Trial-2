@@ -1,0 +1,10 @@
+<!-- <div class="shadow" *ngIf="showPostCreate">
+    <post-create (close)="showPostCreate = false" (submit)="postSubmited()"></post-create>
+</div> -->
+<a class="post-plus" routerLink="/create">+</a>
+<div class="post-list">
+  <post-list-element
+    *ngFor="let post of posts"
+    [post]="post"
+  ></post-list-element>
+</div>

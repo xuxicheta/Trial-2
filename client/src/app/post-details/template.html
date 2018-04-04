@@ -1,0 +1,43 @@
+<div class="post-details">
+  <div class="post-title">
+    {{ post.title }}
+  </div>
+  <div class="post-date">
+    <span class="pref">Created: </span>{{ post.createdAt | date }}
+  </div>
+  <div class="post-author">
+    <span class="pref">Author: </span>{{ post.author }}
+  </div>
+  <div class="post-body">
+    {{ post.body }}
+  </div>
+  <div class="post-comments">
+    <h4>Comments:</h4>
+    <div *ngFor="let comm of comments" class="post-comm">
+      <div class="post-comm-author">
+        {{ comm.author}}
+      </div>
+      <div class="post-comm-text">
+        {{ comm.text}}
+      </div>
+
+    </div>
+
+  </div>
+  <form class="create-comment-place" (submit)="submitComment($event)">
+    <div class="">
+      <label>
+        <span>Your name</span>
+        <input type="text" [(ngModel)]="comment.author" name="author">
+      </label>
+    </div>
+    <div class="line">
+      <label>
+        <span>Text</span>
+        <textarea [(ngModel)]="comment.text" name="text"></textarea>
+      </label>
+    </div>
+    <button class="btn-g line">Add comment</button>
+
+  </form>
+</div>

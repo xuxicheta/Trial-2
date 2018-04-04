@@ -1,0 +1,17 @@
+<div class="post-one">
+  <div class="post-title">
+    <a routerLink="/posts/{{post.id}}">{{ post.title }}</a>
+  </div>
+  <div class="post-date">
+    <span class="pref">Created: </span>{{ post.createdAt | date }}
+  </div>
+  <div class="post-author">
+    <span class="pref">Author: </span>{{ post.author }}
+  </div>
+  <div class="post-body">
+    {{ post.body }}
+  </div>
+  <div class="post-comments">
+      <a routerLink="/posts/{{post.id}}"><img src="../../assets/comment-white-oval-bubble.svg"></a>
+  </div>
+</div>
