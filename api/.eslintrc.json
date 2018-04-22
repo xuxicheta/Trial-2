@@ -1,15 +1,18 @@
 {
+  "parser": "typescript-eslint-parser",
   "extends": [
     "airbnb-base"
   ],
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "es6": true
   },
 	"plugins": [
     "import",
-    "mongodb"
+    "mongodb",
+    "typescript"
 	],
   "rules": {
     "func-names" : "error",
@@ -25,6 +28,17 @@
     "prefer-destructuring": "off",
     "no-loop-func": "off",
     "no-prototype-builtins":"off",
-    "no-continue": "off"
+    "no-continue": "off",
+    "strict": "off",
+    "no-undef": "off",
+    "typescript/no-unused-vars": 2,
+    "import/prefer-default-export": "off",
+    "import/extensions": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": true,
+      "eslint-import-resolver-typescript": true
+    }
   }
 }
