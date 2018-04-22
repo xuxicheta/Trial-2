@@ -1,12 +1,13 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
-import { Post } from '../types/Post';
-import { ApiService } from '../api.service';
+import { Component, OnInit, EventEmitter, Output, OnDestroy, ViewEncapsulation } from '@angular/core';
+// import { Post } from '../../../types/Post';
+import { ApiService } from '@services/api.service';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'post-create',
-  templateUrl: './template.html',
-  styleUrls: ['./styles.scss'],
+  templateUrl: './post-create.html',
+  styleUrls: ['./post-create.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PostCreateComponent implements OnInit {
   @Output() close = new EventEmitter<boolean>();

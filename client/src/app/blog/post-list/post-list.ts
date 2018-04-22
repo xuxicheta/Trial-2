@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Post } from '../types/Post';
-import { ApiService } from '../api.service';
+import { ApiService } from '@services/api.service';
 
 @Component({
   selector: 'post-list',
-  templateUrl: './template.html',
-  styleUrls: ['./styles.scss'],
+  templateUrl: './post-list.html',
+  styleUrls: ['./post-list.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class PostListComponent implements OnInit {

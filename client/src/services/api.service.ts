@@ -3,13 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Comment } from './types/Comment';
-import { Post } from './types/Post';
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
 
 @Injectable()
 export class ApiService {
@@ -42,7 +38,7 @@ export class ApiService {
   };
 
   comments = {
-    create: (comment: Comment): Observable<any> => {
+    create: (comment: PostComment): Observable<any> => {
       this.name = comment.author;
       this.saveName();
       return this.http.post(this.endpoints.comments, comment, httpOptions);
@@ -63,6 +59,4 @@ export class ApiService {
     const name: string = localStorage.getItem('name');
     if (name) this.name = name;
   }
-
-
 };

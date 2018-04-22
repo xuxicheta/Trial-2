@@ -2,9 +2,17 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "module": "es2015",
-    "types": []
+    "target": "es2016",
+    "types": [],
+    "paths": {
+      "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
+      "@services/*": ["services/*"],
+      "@types/*": ["types/*"],
+      "@environments/*": ["environments/*"]
+    }
   },
   "exclude": [
     "test.ts",
