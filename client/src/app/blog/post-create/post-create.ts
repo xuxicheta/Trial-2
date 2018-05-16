@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./post-create.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class PostCreateComponent implements OnInit {
+export class PostCreateComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<boolean>();
   @Output() submit = new EventEmitter<Post>();
 
@@ -26,10 +26,10 @@ export class PostCreateComponent implements OnInit {
   ) { }
 
   private keyHandler = (event) => {
-    if (event.key === "Escape") {
+    if (event.key === 'Escape') {
       this.closeMe(event);
     }
-  };
+  }
 
   submitMe(event): void {
     event.preventDefault();
@@ -40,7 +40,9 @@ export class PostCreateComponent implements OnInit {
   }
 
   closeMe(event): void {
-    if (event) event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     this.location.back();
   }
 

@@ -9,11 +9,16 @@ import * as dotenv from 'dotenv';
 import { router } from './router/index';
 import { errorHandler } from './middleware/ErrorHandler';
 import { successHandler } from './middleware/SuccessHandler';
+import './models';
 
 dotenv.config();
 
 export const app: Koa = new Koa();
 const staticPath = path.resolve(__dirname, '../client', 'dist');
+
+if (process.env.CORS === 'enabled') {
+  app.use(cors());
+}
 
 app.use(koaLogger());
 app.use(koaBody());
@@ -26,9 +31,7 @@ app.use(router.routes());
 app.use(historyFallback({
   index: '/index.html',
 }));
-if (process.env.CORS === 'enabled') {
-  app.use(cors());
-}
+
 
 app.use(koaStatic(staticPath));
 if (!module.parent) app.listen(3000);

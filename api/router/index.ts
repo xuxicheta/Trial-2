@@ -2,11 +2,18 @@ import * as Router from 'koa-router';
 import { IndexController } from '../controllers/IndexController';
 import { PostsController } from '../controllers/PostsController';
 import { CommentsController } from '../controllers/CommentsController';
+import { StateController } from '../controllers/StateController';
 
 export const router: Router = new Router();
 
 router.get('/api', IndexController.manifest);
 router.get('/error', IndexController.error);
+
+// state
+const state: Router = new Router();
+state
+  .get('/', StateController.read);
+router.use('/api/state', state.routes());
 
 // /api/posts
 const posts: Router = new Router();

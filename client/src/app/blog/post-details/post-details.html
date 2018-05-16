@@ -30,7 +30,7 @@
   <mat-form-field>
     <input
       matInput
-      [(ngModel)]="comment.author"
+      [(ngModel)]="nowComment.author"
       placeholder="Your name"
       value=""
       name="author"
@@ -39,7 +39,7 @@
   <mat-form-field class="example-full-width">
     <textarea
       matInput
-      [(ngModel)]="comment.text"
+      [(ngModel)]="nowComment.text"
       placeholder="Leave a comment"
       name="text"
     ></textarea>

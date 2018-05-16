@@ -5,14 +5,7 @@
     "baseUrl": ".",
     "module": "es2015",
     "target": "es2016",
-    "types": [],
-    "paths": {
-      "@app/*": ["app/*"],
-      "@assets/*": ["assets/*"],
-      "@services/*": ["services/*"],
-      "@types/*": ["types/*"],
-      "@environments/*": ["environments/*"]
-    }
+    "types": []
   },
   "exclude": [
     "test.ts",

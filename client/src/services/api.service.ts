@@ -7,14 +7,17 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 @Injectable()
 export class ApiService {
-  name: string = '';
+  state: any;
+  name = '';
   private baseUrl = 'http://localhost:3000/api';
 
   private endpoints = {
     posts:  `${this.baseUrl}/posts`,
     comments: `${this.baseUrl}/comments`,
+    state: `${this.baseUrl}/state`,
   };
 
   constructor(
@@ -57,6 +60,12 @@ export class ApiService {
 
   restoreName(): void {
     const name: string = localStorage.getItem('name');
-    if (name) this.name = name;
+    if (name) {
+      this.name = name;
+    }
   }
-};
+
+  getState(): void  {
+    this.http.get(`${this.endpoints.state}`, httpOptions).subscribe(res => this.state = res);
+  }
+}

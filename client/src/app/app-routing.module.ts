@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//components
+// components
 import { PostCreateComponent } from '@app/blog/post-create/post-create';
 import { PostListComponent } from '@app/blog/post-list/post-list';
 import { PostDetailsComponent } from '@app/blog/post-details/post-details';
